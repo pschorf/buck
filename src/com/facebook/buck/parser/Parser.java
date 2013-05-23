@@ -32,6 +32,7 @@ import com.facebook.buck.graph.MutableDirectedGraph;
 import com.facebook.buck.java.JavaBinaryBuildRuleFactory;
 import com.facebook.buck.java.JavaLibraryBuildRuleFactory;
 import com.facebook.buck.java.JavaTestBuildRuleFactory;
+import com.facebook.buck.java.MavenJarBuildRuleFactory;
 import com.facebook.buck.java.PrebuiltJarBuildRuleFactory;
 import com.facebook.buck.model.BuildFileTree;
 import com.facebook.buck.model.BuildTarget;
@@ -356,6 +357,8 @@ public final class Parser {
             new JavaBinaryBuildRuleFactory())
         .put(BuildRuleType.NDK_LIBRARY,
             new NdkLibraryBuildRuleFactory())
+        .put(BuildRuleType.MAVEN_JAR,
+            new MavenJarBuildRuleFactory())
         .put(BuildRuleType.ANDROID_BINARY, new AndroidBinaryBuildRuleFactory())
         .put(BuildRuleType.ANDROID_INSTRUMENTATION_APK, new AndroidInstrumentationApkRuleFactory())
         .put(BuildRuleType.ANDROID_LIBRARY, new AndroidLibraryBuildRuleFactory())

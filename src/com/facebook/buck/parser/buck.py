@@ -259,6 +259,25 @@ def prebuilt_jar(
     'visibility' : visibility,
   }, build_env)
 
+@provide_for_build
+def maven_jar(
+    name,
+    group,
+    artifact,
+    version,
+    deps=[],
+    visibility=[],
+    build_env=None):
+  add_rule({
+    'type': 'maven_jar',
+    'name': name,
+    'version': version,
+    'group': group,
+    'artifact': artifact,
+    'deps': deps,
+    'visibility' : visibility,
+  }, build_env)
+
 
 @provide_for_build
 def android_library(
